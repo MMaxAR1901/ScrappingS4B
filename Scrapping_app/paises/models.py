@@ -6,7 +6,7 @@ class FiltroPaisesNoEliminados(models.Manager):
 
 
 class Pais(models.Model):
-    """utilizamos Unique para que no se repitan los nombres y se agreguen a la base de datos"""
+    ##utilizamos Unique para que no se repitan los nombres y se agreguen a la base de datos
     nombre = models.CharField(max_length=50, unique= True)
     capital = models.CharField(max_length=50) 
     poblacion = models.BigIntegerField()
