@@ -1,0 +1,42 @@
+<div style="background-color: darkcyan;">
+    <h1>Lista de países</h1>
+
+
+
+    <form method="get" action="" class="entradaFiltro">
+        <input type="text" name="consulta"
+            placeholder="Escribe lo que quieras buscar... EJEMPLO: dame los paises que inicien con A "
+            style="width:800px; height:200px;"> <button type="submit">Filtrar</button>
+    </form>
+
+    <hr>
+    <h3>Total de Países: {{ paises|length }}</h3>
+
+    <table border="3" class="tabla-paises">
+        <tr class="tabla-headers">
+            <th>Nombre</th>
+            <th>Capital</th>
+            <th>Población</th>
+            <th>Área</th>
+        </tr>
+
+        {% for pais in paises %}
+        <tr class="tabla-info">
+            <td>{{ pais.nombre }}</td>
+            <td>{{ pais.capital }}</td>
+            <td>{{ pais.poblacion }}</td>
+            <td>{{ pais.area }}</td>
+
+            <td>
+                <form method="post" action="{% url 'borradoLogicoPais' pk=pais.pk %}">
+                    {% csrf_token %}
+                    <button type="submit">Eliminar (Lógico)</button>
+                </form>
+            </td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>

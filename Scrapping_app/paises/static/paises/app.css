@@ -1,0 +1,17 @@
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.tabla-paises {
+  grid-column: span 2;
+  grid-row: span 5;
+}
+
+.tabla-info {
+  grid-column: span 2;
+  grid-row: span 3;
+  grid-column-start: 3;
+}
