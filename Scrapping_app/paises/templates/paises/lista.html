@@ -1,8 +1,15 @@
 <div style="background-color: darkcyan;">
-    <h1>Lista de países</h1>
+    <h1>Lista de países haciendo Scrapping con ayuda de Ollama</h1>
+    <h2>Arellano Rosas Manuel Maximiliano</h2>
 
 
-
+    <form method="post" action="{% url 'cargarPaises' %}" class="recargarDatos">
+        {% csrf_token %}
+        <button type="submit">
+            Reiniciar lista de Paises y borrado Logico
+        </button>
+    </form>
+    <hr>
     <form method="get" action="" class="entradaFiltro">
         <input type="text" name="consulta"
             placeholder="Escribe lo que quieras buscar... EJEMPLO: dame los paises que inicien con A "
